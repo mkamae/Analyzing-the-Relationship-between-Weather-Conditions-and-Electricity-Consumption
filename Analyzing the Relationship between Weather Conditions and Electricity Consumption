@@ -1,0 +1,17 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the data into a pandas dataframe
+df = pd.read_csv('electricity_data.csv')
+
+# Create a scatter plot of the relationship between temperature and electricity consumption
+sns.scatterplot(data=df, x='temperature', y='electricity_consumption')
+plt.title('Relationship between temperature and electricity consumption')
+plt.xlabel('Temperature')
+plt.ylabel('Electricity consumption')
+plt.show()
+
+# Calculate the correlation between temperature and electricity consumption
+correlation = df['temperature'].corr(df['electricity_consumption'])
+print('Correlation coefficient:', correlation)
